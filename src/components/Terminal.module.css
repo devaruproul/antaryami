@@ -1,0 +1,356 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+/* ── Boot Screen ─────────────────────────────────────── */
+.bootScreen {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100vh;
+  background: var(--bg);
+  padding: 2rem;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.bootContent {
+  width: 100%;
+}
+
+.bootLine {
+  display: flex;
+  gap: 1rem;
+  color: var(--green-dim);
+  animation: fadeInUp 0.1s ease;
+  margin-bottom: 2px;
+}
+
+.bootPrefix {
+  color: var(--gray);
+  min-width: 60px;
+  font-size: 11px;
+}
+
+.bootCursor {
+  margin-top: 8px;
+}
+
+/* ── Top Bar ──────────────────────────────────────────── */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0d150d;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.windowControls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.dot:hover {
+  opacity: 1;
+}
+
+.tabTitle {
+  font-size: 12px;
+  color: var(--gray-light);
+  letter-spacing: 0.5px;
+}
+
+.topRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.statusBadge {
+  font-size: 10px;
+  color: var(--green);
+  letter-spacing: 1px;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ── Quick Bar ──────────────────────────────────────────── */
+.quickBar {
+  display: flex;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #0b120b;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.quickBtn {
+  background: transparent;
+  border: 1px solid var(--green-muted);
+  color: var(--green-dim);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 3px 10px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.15s ease;
+  letter-spacing: 0.3px;
+}
+
+.quickBtn:hover {
+  background: var(--green-muted);
+  color: var(--green);
+  border-color: var(--green-dim);
+  box-shadow: 0 0 8px var(--green-glow);
+}
+
+/* ── Terminal Body ──────────────────────────────────────── */
+.terminal {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px 20px 8px;
+  cursor: text;
+}
+
+/* ── History Entries ────────────────────────────────────── */
+.entry {
+  margin-bottom: 2px;
+  animation: fadeInUp 0.1s ease;
+}
+
+.inputLine {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.inputText {
+  color: var(--white);
+  word-break: break-all;
+}
+
+/* ── Prompt ─────────────────────────────────────────────── */
+.prompt {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.promptUser {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.promptAt {
+  color: var(--gray);
+}
+
+.promptHost {
+  color: var(--cyan);
+}
+
+.promptColon {
+  color: var(--gray);
+}
+
+.promptPath {
+  color: var(--amber);
+}
+
+.promptDollar {
+  color: var(--green);
+  margin-right: 8px;
+}
+
+/* ── Output ─────────────────────────────────────────────── */
+.output {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 4px 0 10px;
+  padding: 2px 0 2px 0;
+}
+
+.outputSuccess {
+  color: var(--white);
+}
+
+.outputError {
+  color: var(--red);
+}
+
+.outputInfo {
+  color: var(--amber);
+}
+
+/* ── Banner ─────────────────────────────────────────────── */
+.banner {
+  white-space: pre;
+  color: var(--green);
+  font-size: 10px;
+  line-height: 1.3;
+  text-shadow: 0 0 12px var(--green), 0 0 24px rgba(57,255,20,0.3);
+  margin-bottom: 8px;
+  animation: fadeInUp 0.4s ease;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    font-size: 6px;
+  }
+}
+
+/* ── Input Row ──────────────────────────────────────────── */
+.inputRow {
+  display: flex;
+  align-items: baseline;
+  padding: 4px 0 8px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  flex: 1;
+  min-width: 0;
+}
+
+.inputField {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  caret-color: transparent;
+  width: 100%;
+  min-width: 0;
+  letter-spacing: 0.3px;
+}
+
+.autocomplete {
+  color: var(--gray);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  pointer-events: none;
+  margin-left: -1px;
+  opacity: 0.6;
+}
+
+/* ── Cursor ─────────────────────────────────────────────── */
+.cursor {
+  color: var(--green);
+  animation: blink 1s step-end infinite;
+  font-size: 13px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Status Bar ─────────────────────────────────────────── */
+.statusBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--green-muted);
+  padding: 4px 16px;
+  font-size: 11px;
+  color: var(--green);
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  border-top: 1px solid var(--green-dim);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.statusTime {
+  color: var(--amber);
+}
+
+/* Scrollbar for terminal */
+.terminal::-webkit-scrollbar {
+  width: 4px;
+}
+
+.terminal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal::-webkit-scrollbar-thumb {
+  background: var(--green-muted);
+  border-radius: 2px;
+}
+
+/* ── Wizard / Contact Form Styles ───────────────────────────────── */
+
+.wizardOutput {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--cyan);
+  margin: 2px 0 4px;
+  border-left: 2px solid var(--cyan);
+  padding-left: 10px;
+  opacity: 0.92;
+  animation: fadeInUp 0.15s ease;
+}
+
+.wizardPrompt {
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.3px;
+  min-width: 220px;
+}
+
+.inputFieldWizard {
+  color: var(--cyan) !important;
+  caret-color: var(--cyan);
+}
+
+.wizardTag {
+  color: var(--amber);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+.quickBtnHighlight {
+  border-color: var(--cyan) !important;
+  color: var(--cyan) !important;
+  box-shadow: 0 0 6px rgba(0, 255, 204, 0.2);
+}
+
+.quickBtnHighlight:hover {
+  background: rgba(0, 255, 204, 0.1) !important;
+  color: var(--cyan) !important;
+  border-color: var(--cyan) !important;
+  box-shadow: 0 0 12px rgba(0, 255, 204, 0.3) !important;
+}
