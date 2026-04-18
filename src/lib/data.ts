@@ -3,13 +3,12 @@ export const portfolioData = {
   title: "Full Stack Developer",
   email: "roulantaryami3@gmail.com",
   phone: "+91-76820 25145",
-  website: "https://antaryami.free.nf/",
+  website: "https://antaryamiroul.vercel.app/",
   location: "Bhubaneswar, Odisha, India",
   github: "https://github.com/devaruproul",
   linkedin: "https://linkedin.com/in/antaryami-roul",
 
-  summary:
-    "Full Stack Developer skilled in Laravel, React, Angular, Python, and Django with strong experience building scalable, data-driven systems. Adept at optimizing backend performance, designing secure APIs, and solving complex data-processing challenges.",
+  summary: "Full Stack Developer skilled in Laravel, React, Angular, Python, and Django with strong experience building scalable, data-driven systems. Adept at optimizing backend performance, designing secure APIs, and solving complex data-processing challenges.",
 
   skills: {
     backend: ["Laravel", "Django", "Node.js", "RESTful APIs", "Authentication", "MySQL", "MongoDB", "SQLite"],

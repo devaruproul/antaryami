@@ -193,9 +193,9 @@ export default function Terminal() {
 
       // ── Save value ────────────────────────────────────────────────────────────
       const newData = { ...data };
-      if (step === "name")    newData.name    = trimmed;
-      if (step === "email")   newData.email   = trimmed;
-      if (step === "mobile")  newData.mobile  = trimmed;
+      if (step === "name") newData.name = trimmed;
+      if (step === "email") newData.email = trimmed;
+      if (step === "mobile") newData.mobile = trimmed;
       if (step === "message") newData.message = trimmed;
 
       const next = nextStep(step) as ContactStep;
@@ -409,13 +409,12 @@ export default function Terminal() {
               <pre className={styles.wizardOutput}>{entry.content}</pre>
             ) : (
               <pre
-                className={`${styles.output} ${
-                  entry.type === "error"
-                    ? styles.outputError
-                    : entry.type === "info"
+                className={`${styles.output} ${entry.type === "error"
+                  ? styles.outputError
+                  : entry.type === "info"
                     ? styles.outputInfo
                     : styles.outputSuccess
-                }`}
+                  }`}
               >
                 {entry.content}
               </pre>
